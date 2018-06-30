@@ -1,7 +1,7 @@
-const path = require(`path`)
+const path = require(`path`);
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+  const { createPage } = boundActionCreators;
 
   const loadPosts = new Promise((resolve, reject) => {
     graphql(`
@@ -20,13 +20,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           path: `${node.slug}/`,
           component: path.resolve(`./src/templates/post.js`),
           context: {
-            slug: node.slug,
-          },
-        })
-      })
-      resolve()
-    })
-  })
+            slug: node.slug
+          }
+        });
+      });
+      resolve();
+    });
+  });
 
   const loadPages = new Promise((resolve, reject) => {
     graphql(`
@@ -45,13 +45,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           path: `${node.slug}/`,
           component: path.resolve(`./src/templates/page.js`),
           context: {
-            slug: node.slug,
-          },
-        })
-      })
-      resolve()
-    })
-  })
+            slug: node.slug
+          }
+        });
+      });
+      resolve();
+    });
+  });
 
   const loadTags = new Promise((resolve, reject) => {
     graphql(`
@@ -70,13 +70,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           path: `tag/${node.slug}/`,
           component: path.resolve(`./src/templates/tag.js`),
           context: {
-            slug: node.slug,
-          },
-        })
-      })
-      resolve()
-    })
-  })
+            slug: node.slug
+          }
+        });
+      });
+      resolve();
+    });
+  });
 
-  return Promise.all([loadPosts, loadPages, loadTags])
-}
+  return Promise.all([loadPosts, loadPages, loadTags]);
+};
