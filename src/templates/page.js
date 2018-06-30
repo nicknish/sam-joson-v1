@@ -1,7 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import config from '../utils/siteConfig';
-import Container from '../components/Container';
 import PageTitle from '../components/PageTitle';
 import PageBody from '../components/PageBody';
 import SEO from '../components/SEO';
@@ -17,10 +16,10 @@ const PageTemplate = ({ data }) => {
       </Helmet>
       <SEO pagePath={slug} postNode={postNode} pageSEO />
 
-      <Container>
+      <div className="container">
         <PageTitle>{title}</PageTitle>
         <PageBody body={body} />
-      </Container>
+      </div>
     </div>
   );
 };

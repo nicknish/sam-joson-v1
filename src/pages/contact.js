@@ -1,27 +1,25 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import config from '../utils/siteConfig';
-import Container from '../components/Container';
 import PageTitle from '../components/PageTitle';
 import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';
 
 const Contact = ({ data }) => {
-  const postNode = {
-    title: `Contact - ${config.siteTitle}`
-  };
+  const siteTitle = `Contact - ${config.siteTitle}`;
+  const postNode = { title: siteTitle };
 
   return (
     <div>
       <Helmet>
-        <title>{`Contact - ${config.siteTitle}`}</title>
+        <title>{siteTitle}</title>
       </Helmet>
       <SEO postNode={postNode} pagePath="contact" customTitle />
 
-      <Container>
+      <div className="container">
         <PageTitle>Contact</PageTitle>
         <ContactForm />
-      </Container>
+      </div>
     </div>
   );
 };

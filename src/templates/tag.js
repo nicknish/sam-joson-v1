@@ -5,7 +5,6 @@ import config from '../utils/siteConfig';
 import Card from '../components/Card';
 import CardList from '../components/CardList';
 import PageTitle from '../components/PageTitle';
-import Container from '../components/Container';
 
 const TagTemplate = ({ data }) => {
   const { title, slug } = data.contentfulTag;
@@ -23,7 +22,7 @@ const TagTemplate = ({ data }) => {
         <meta property="og:url" content={`${config.siteUrl}/tag/${slug}/`} />
       </Helmet>
 
-      <Container>
+      <div className="container">
         <PageTitle small>Tag: &ldquo;{title}&rdquo;</PageTitle>
 
         <CardList>
@@ -38,7 +37,7 @@ const TagTemplate = ({ data }) => {
             />
           ))}
         </CardList>
-      </Container>
+      </div>
     </div>
   );
 };

@@ -3,7 +3,6 @@ import find from 'lodash/find';
 import Helmet from 'react-helmet';
 import config from '../utils/siteConfig';
 import Hero from '../components/Hero';
-import Container from '../components/Container';
 import PageBody from '../components/PageBody';
 import TagList from '../components/TagList';
 import PostLinks from '../components/PostLinks';
@@ -36,12 +35,12 @@ const PostTemplate = ({ data }) => {
 
       <Hero title={title} image={heroImage} height={'50vh'} />
 
-      <Container>
+      <div className="container">
         {tags && <TagList tags={tags} />}
         <PostDate date={publishDate} />
         <PageBody body={body} />
         <PostLinks previous={postIndex.previous} next={postIndex.next} />
-      </Container>
+      </div>
     </div>
   );
 };
