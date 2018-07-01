@@ -1,6 +1,15 @@
 import Typography from 'typography';
-import doelgerTheme from 'typography-theme-doelger';
+import moragaTheme from 'typography-theme-moraga';
 
-const typography = new Typography(doelgerTheme);
+moragaTheme.overrideThemeStyles = ({ rhythm }, options) => ({
+  a: {
+    color: 'rgba(0,0,0,.8)'
+  },
+  'a:hover': {
+    color: 'rgba(0,0,0,.6)'
+  }
+});
+
+const typography = new Typography(moragaTheme);
 
 export default typography;

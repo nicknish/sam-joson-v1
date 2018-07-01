@@ -159,6 +159,12 @@ module.exports = {
         color: config.themeColor
       }
     },
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: `src/utils/typography.js`
+      }
+    },
     'gatsby-plugin-netlify'
   ]
 };
