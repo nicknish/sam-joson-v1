@@ -1,0 +1,15 @@
+.btn {
+  display: inline-block;
+  appearance: none;
+  padding: 7px 15px;
+  background: black;
+  border-radius: 2px;
+  color: white;
+  transition: background 200ms ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    color: white;
+  }
+}

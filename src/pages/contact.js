@@ -16,7 +16,7 @@ const Contact = ({ data }) => {
       </Helmet>
       <SEO postNode={postNode} pagePath="contact" customTitle />
 
-      <div className="container">
+      <div className="page container">
         <PageTitle>Contact</PageTitle>
         <ContactForm />
       </div>

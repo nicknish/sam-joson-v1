@@ -1,0 +1,40 @@
+.siteHeader {
+  display: flex;
+  min-height: 50px;
+  border-bottom: 1px solid #efefef;
+  text-align: center;
+  background: white;
+  align-items: center;
+}
+
+.siteHeader-title {
+  width: 100%;
+  font-size: 28px;
+}
+
+.siteHeader-titleCopy {
+  width: 100%;
+}
+
+.siteHeader-menuBtn {
+  position: absolute;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  font-size: 28px;
+  line-height: 0.8;
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0);
+  background: none;
+  transition: all 100ms ease;
+
+  &:hover {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}

@@ -96,7 +96,7 @@ class ContactForm extends React.Component {
           name="name"
           className="input"
           type="text"
-          placeholder="Full Name"
+          placeholder="NAME"
           value={this.state.name}
           onChange={this.handleInputChange}
           required
@@ -105,7 +105,7 @@ class ContactForm extends React.Component {
           name="email"
           type="email"
           className="input"
-          placeholder="Email"
+          placeholder="EMAIL"
           value={this.state.email}
           onChange={this.handleInputChange}
           required
@@ -115,13 +115,13 @@ class ContactForm extends React.Component {
           name="message"
           className="textarea"
           type="text"
-          placeholder="Message"
+          placeholder="MESSAGE"
           value={this.state.message}
           onChange={this.handleInputChange}
           required
         />
 
-        <Button>Send</Button>
+        <Button className="btn btn-primary btn-sm m-t-10">Send</Button>
 
         <Modal visible={this.state.showModal}>
           <p>

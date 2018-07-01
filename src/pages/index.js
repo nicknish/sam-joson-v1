@@ -1,7 +1,7 @@
 import React from 'react';
-import CardList from '../components/CardList';
-import Card from '../components/Card';
 import SEO from '../components/SEO';
+import Img from 'gatsby-image';
+import Link from 'gatsby-link';
 
 const Index = ({ data }) => {
   const posts = data.allContentfulPost.edges;
@@ -9,19 +9,20 @@ const Index = ({ data }) => {
   return (
     <div>
       <SEO />
-      <div className="container">
-        <CardList>
-          {posts.map(({ node: post }) => (
-            <Card
-              key={post.id}
-              slug={post.slug}
-              image={post.heroImage}
-              title={post.title}
-              date={post.publishDate}
-              excerpt={post.body}
+      <div className="container page">
+        {posts.map(({ node: post }) => (
+          <article>
+            <h2>
+              <Link to={`blog/${post.slug}`}>{post.title}</Link>
+            </h2>
+            {post.heroImage && <Img sizes={post.heroImage.sizes} />}
+            <p
+              dangerouslySetInnerHTML={{
+                __html: post.body.childMarkdownRemark.excerpt
+              }}
             />
-          ))}
-        </CardList>
+          </article>
+        ))}
       </div>
     </div>
   );

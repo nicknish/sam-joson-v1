@@ -10,7 +10,7 @@ const PageTemplate = ({ data }) => {
   const postNode = data.contentfulPage;
 
   return (
-    <div>
+    <div className="page">
       <Helmet>
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>

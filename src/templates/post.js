@@ -10,15 +10,7 @@ import PostDate from '../components/PostDate';
 import SEO from '../components/SEO';
 
 const PostTemplate = ({ data }) => {
-  const {
-    title,
-    slug,
-    id,
-    heroImage,
-    body,
-    publishDate,
-    tags
-  } = data.contentfulPost;
+  const { title, slug, id, body, publishDate, tags } = data.contentfulPost;
   const postNode = data.contentfulPost;
 
   const postIndex = find(
@@ -31,11 +23,10 @@ const PostTemplate = ({ data }) => {
       <Helmet>
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>
-      <SEO pagePath={slug} postNode={postNode} postSEO />
+      <SEO pagePath={`/blog/${slug}`} postNode={postNode} postSEO />
 
-      <Hero title={title} image={heroImage} height={'50vh'} />
-
-      <div className="container">
+      <div className="post container">
+        <h1>{title}</h1>
         {tags && <TagList tags={tags} />}
         <PostDate date={publishDate} />
         <PageBody body={body} />

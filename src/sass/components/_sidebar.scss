@@ -1,0 +1,70 @@
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  bottom: 0;
+  z-index: 2;
+  width: 80%;
+  background: white;
+  max-width: 300px;
+  border-right: 1px solid #eee;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  transition: left 150ms ease-in-out;
+
+  &.is-active {
+    left: 0;
+  }
+
+  ul {
+    margin: 0;
+    list-style: none;
+  }
+
+  ul > li {
+    margin: 0;
+
+    &:last-child > a {
+      border-bottom: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    position: static;
+    max-width: 200px;
+    box-shadow: none;
+  }
+}
+
+.sidebar-link {
+  display: block;
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  background: none;
+  font-size: 20px;
+
+  &:hover,
+  &.is-active {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.sidebar-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: black;
+  opacity: 0.3;
+  z-index: 1;
+  // TODO: Add fade-in effect for sidebar background
+  transition: opacity 80ms ease-out;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}

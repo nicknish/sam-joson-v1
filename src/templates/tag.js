@@ -2,8 +2,6 @@ import React from 'react';
 import sortBy from 'lodash/sortBy';
 import Helmet from 'react-helmet';
 import config from '../utils/siteConfig';
-import Card from '../components/Card';
-import CardList from '../components/CardList';
 import PageTitle from '../components/PageTitle';
 
 const TagTemplate = ({ data }) => {
@@ -25,18 +23,17 @@ const TagTemplate = ({ data }) => {
       <div className="container">
         <PageTitle small>Tag: &ldquo;{title}&rdquo;</PageTitle>
 
-        <CardList>
-          {posts.map(post => (
-            <Card
-              key={post.id}
-              slug={post.slug}
-              image={post.heroImage}
-              title={post.title}
-              date={post.publishDate}
-              excerpt={post.body}
+        {posts.map(({ node: post }) => (
+          <article>
+            <h2>{post.title}</h2>
+            {post.heroImage && <Img sizes={post.heroImage.sizes} />}
+            <p
+              dangerouslySetInnerHTML={{
+                __html: post.body.childMarkdownRemark.excerpt
+              }}
             />
-          ))}
-        </CardList>
+          </article>
+        ))}
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 import React from 'react';
-require('prismjs/themes/prism.css');
 
 const PageBody = props => {
   return (
