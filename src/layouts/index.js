@@ -1,10 +1,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
 import config from '../utils/siteConfig';
 import favicon from '../images/favicon.ico';
 import '../sass/app.scss';
-import FaBars from 'react-icons/lib/fa/bars';
+
+import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 
 export class Layout extends React.Component {
   state = {
@@ -41,68 +42,10 @@ export class Layout extends React.Component {
           <meta property="og:site_name" content={config.siteTitle} />
         </Helmet>
 
-        <header className="siteHeader">
-          <span className="siteHeader-title">
-            <Link to="/" className="siteHeader-titleCopy">
-              Sam Joson
-            </Link>
-          </span>
-          <button
-            className="siteHeader-menuBtn"
-            onClick={this.handleToggleMenu}
-          >
-            <FaBars />
-          </button>
-        </header>
+        <Header handleToggleMenu={this.handleToggleMenu} />
 
         <div className="siteContainer">
-          <aside className={`sidebar ${menuOpen ? 'is-active' : ''}`}>
-            <nav>
-              <ul>
-                <li>
-                  <Link
-                    to="/"
-                    className="sidebar-link"
-                    activeClassName="is-active"
-                    onClick={this.handleCloseMenu}
-                    exact={true}
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/about"
-                    className="sidebar-link"
-                    activeClassName="is-active"
-                    onClick={this.handleCloseMenu}
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/portfolio"
-                    className="sidebar-link"
-                    activeClassName="is-active"
-                    onClick={this.handleCloseMenu}
-                  >
-                    Portfolio
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/contact"
-                    className="sidebar-link"
-                    activeClassName="is-active"
-                    onClick={this.handleCloseMenu}
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </aside>
+          <Sidebar menuOpen={menuOpen} handleCloseMenu={this.handleCloseMenu} />
           <main className="siteContent">{children()}</main>
         </div>
 
