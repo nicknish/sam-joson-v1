@@ -15,7 +15,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }
     `).then(result => {
-      result.data.allContentfulPost.edges.map(({ node }) => {
+      result.data.allContentfulPost.edges.forEach(({ node }) => {
         createPage({
           path: `/blog/${node.slug}`,
           component: path.resolve(`./src/templates/post.js`),
@@ -40,7 +40,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }
     `).then(result => {
-      result.data.allContentfulPage.edges.map(({ node }) => {
+      result.data.allContentfulPage.edges.forEach(({ node }) => {
         createPage({
           path: `${node.slug}/`,
           component: path.resolve(`./src/templates/page.js`),
@@ -53,5 +53,34 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     });
   });
 
-  return Promise.all([loadPosts, loadPages]);
+  const loadPortfolio = new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allContentfulPortfolio {
+          edges {
+            node {
+              portfolioItems {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `).then(result => {
+      result.data.allContentfulPortfolio.edges[0].node.portfolioItems.forEach(
+        portfolioItem => {
+          createPage({
+            path: `/portfolio/${portfolioItem.slug}/`,
+            component: path.resolve(`./src/templates/portfolioItem.js`),
+            context: {
+              slug: portfolioItem.slug
+            }
+          });
+        }
+      );
+      resolve();
+    });
+  });
+
+  return Promise.all([loadPosts, loadPages, loadPortfolio]);
 };
