@@ -2,7 +2,6 @@ import React from 'react';
 import find from 'lodash/find';
 import Helmet from 'react-helmet';
 import config from '../utils/siteConfig';
-import Hero from '../components/Hero';
 import PageBody from '../components/PageBody';
 import TagList from '../components/TagList';
 import PostLinks from '../components/PostLinks';
@@ -42,29 +41,8 @@ export const query = graphql`
       title
       id
       slug
-      metaDescription {
-        internal {
-          content
-        }
-      }
       publishDate(formatString: "MMMM DD, YYYY")
       publishDateISO: publishDate(formatString: "YYYY-MM-DD")
-      tags {
-        title
-        id
-        slug
-      }
-      heroImage {
-        title
-        sizes(maxWidth: 1800) {
-          ...GatsbyContentfulSizes_withWebp_noBase64
-        }
-        ogimg: resize(width: 1800) {
-          src
-          width
-          height
-        }
-      }
       body {
         childMarkdownRemark {
           html
