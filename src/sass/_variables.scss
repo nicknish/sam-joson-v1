@@ -1,0 +1,26 @@
+// Typography
+
+$font-header: 'Amatic SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$font-body: 'Crimson Text', serif;
+
+// Spacing
+$space-pagePaddingTop: 30px;
+$space-pagePaddingBottom: 40px;
+
+// Colors
+
+$color-siteBorders: #eee;
+$color-siteInnerBorders: #efefef;
+$color-sidebarLinkBorder: rgba(0, 0, 0, 0.1);
+$color-sidebarLinkActive: rgb(243, 189, 13);
+$color-date: rgba(0, 0, 0, 0.4);
+$color-blogPostBorder: #efefef;
+
+$color-btn-default: rgba(0, 0, 0, 0.7);
+$color-btn-default--hover: rgba(0, 0, 0, 0.8);
+$color-btn-default--text: white;
+
+$color-menuBtnBorder: transparent;
+$color-menuBtnBorder--hover: rgba(0, 0, 0, 0.1);
+$color-menuBtnBg--hover: rgba(0, 0, 0, 0.05);

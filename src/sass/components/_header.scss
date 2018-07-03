@@ -1,19 +1,22 @@
 .siteHeader {
   display: flex;
-  min-height: 50px;
-  border-bottom: 1px solid #efefef;
+  align-items: center;
+  min-height: 100px;
+  border-bottom: 1px solid $color-siteInnerBorders;
   text-align: center;
   background: white;
-  align-items: center;
 }
 
-.siteHeader-title {
-  width: 100%;
-  font-size: 28px;
+.siteHeader-logoLink {
+  display: block;
+  max-width: 220px;
+  margin: 0 auto;
+  line-height: 1;
 }
 
-.siteHeader-titleCopy {
+.siteHeader-logo {
   width: 100%;
+  margin: 0;
 }
 
 .siteHeader-menuBtn {
@@ -25,13 +28,13 @@
   font-size: 28px;
   line-height: 0.8;
   appearance: none;
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 1px solid $color-menuBtnBorder;
   background: none;
   transition: all 100ms ease;
 
   &:hover {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid $color-menuBtnBorder--hover;
+    background: $color-menuBtnBg--hover;
   }
 
   @media (min-width: 768px) {
