@@ -43,7 +43,7 @@
   font-family: $font-header;
   letter-spacing: 3px;
   text-decoration: none;
-  background: none;
+  // background-image: url('../../images/paw.png');
 
   &:hover,
   &.is-active {
@@ -67,6 +67,7 @@
   background: black;
   opacity: 0.3;
   z-index: 1;
+
   // TODO: Add fade-in effect for sidebar background
   transition: opacity 80ms ease-out;
 

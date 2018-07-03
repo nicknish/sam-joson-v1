@@ -45,6 +45,7 @@
     "format": "prettier --write \"src/**/*.{js,jsx,json,css,scss}\""
   },
   "devDependencies": {
+    "@svgr/cli": "^2.0.0",
     "eslint": "^4.19.1",
     "prettier": "^1.13.5",
     "stylelint": "9.3.0",
