@@ -2,14 +2,15 @@
   display: inline-block;
   appearance: none;
   padding: 7px 15px;
-  background: black;
+  border: 1px solid $color-btn-default;
   border-radius: 2px;
-  color: white;
+  color: $color-btn-default;
+  background: transparent;
   transition: background 200ms ease;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.8);
     text-decoration: none;
-    color: white;
+    color: $color-btn-default--text;
+    background: $color-btn-default--hover;
   }
 }

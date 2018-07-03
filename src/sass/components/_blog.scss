@@ -1,0 +1,18 @@
+.blogPostPreview {
+  border-bottom: 1px solid $color-blogPostBorder;
+  margin-bottom: 20px;
+}
+
+.blogPostPreview-header {
+  margin-bottom: 10px;
+}
+
+.blogPostPreview-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.blogPostPreview-date {
+  font-size: 14px;
+  color: $color-date;
+}

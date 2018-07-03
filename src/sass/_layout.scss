@@ -1,3 +1,4 @@
+// Automatically inserted wrapper around content
 #___gatsby {
   height: 100%;
 }
@@ -12,16 +13,24 @@
   max-width: 960px;
   margin: 0 auto;
   flex-direction: column;
+  border-right: 1px solid $color-siteBorders;
+  border-left: 1px solid $color-siteBorders;
 }
 
 .siteContainer {
   display: flex;
+  flex: 1 0 auto;
   width: 100%;
   max-width: 1100px;
-  flex: 1 0 auto;
 }
 
 .siteContent {
   width: 100%;
   background: white;
+}
+
+.page,
+.post {
+  padding-top: $space-pagePaddingTop;
+  padding-bottom: $space-pagePaddingBottom;
 }

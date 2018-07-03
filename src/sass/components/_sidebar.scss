@@ -5,9 +5,9 @@
   bottom: 0;
   z-index: 2;
   width: 80%;
-  background: white;
   max-width: 300px;
-  border-right: 1px solid #eee;
+  border-right: 1px solid $color-siteBorders;
+  background: white;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   transition: left 150ms ease-in-out;
 
@@ -37,18 +37,24 @@
 
 .sidebar-link {
   display: block;
-  padding: 10px 15px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  border-bottom: 1px solid $color-sidebarLinkBorder;
+  font-size: 24px;
+  font-family: $font-header;
+  letter-spacing: 3px;
   text-decoration: none;
   background: none;
-  font-size: 20px;
 
   &:hover,
   &.is-active {
-    background: rgba(0, 0, 0, 0.05);
+    color: $color-sidebarLinkActive;
   }
   &:hover {
     text-decoration: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 3px 15px;
   }
 }
 
