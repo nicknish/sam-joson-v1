@@ -1,50 +1,35 @@
 import React from 'react';
 import Link from 'gatsby-link';
 
+const SidebarLink = props => (
+  <Link className="sidebar-link" activeClassName="is-active" {...props}>
+    {props.children}
+  </Link>
+);
+
 export default ({ menuOpen, handleCloseMenu }) => (
   <aside className={`sidebar ${menuOpen ? 'is-active' : ''}`}>
     <nav>
       <ul>
         <li>
-          <Link
-            to="/"
-            className="sidebar-link"
-            activeClassName="is-active"
-            onClick={handleCloseMenu}
-            exact={true}
-          >
+          <SidebarLink to="/" onClick={handleCloseMenu} exact={true}>
             Home
-          </Link>
+          </SidebarLink>
         </li>
         <li>
-          <Link
-            to="/about"
-            className="sidebar-link"
-            activeClassName="is-active"
-            onClick={handleCloseMenu}
-          >
+          <SidebarLink to="/about" onClick={handleCloseMenu}>
             About
-          </Link>
+          </SidebarLink>
         </li>
         <li>
-          <Link
-            to="/portfolio"
-            className="sidebar-link"
-            activeClassName="is-active"
-            onClick={handleCloseMenu}
-          >
+          <SidebarLink to="/portfolio" onClick={handleCloseMenu}>
             Portfolio
-          </Link>
+          </SidebarLink>
         </li>
         <li>
-          <Link
-            to="/contact"
-            className="sidebar-link"
-            activeClassName="is-active"
-            onClick={handleCloseMenu}
-          >
+          <SidebarLink to="/contact" onClick={handleCloseMenu}>
             Contact
-          </Link>
+          </SidebarLink>
         </li>
       </ul>
     </nav>
