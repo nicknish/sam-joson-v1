@@ -2,6 +2,9 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import config from '../utils/siteConfig';
 import favicon from '../images/favicon.ico';
+import favicon16x16 from '../images/favicon-16x16.png';
+import favicon32x32 from '../images/favicon-32x32.png';
+
 import '../sass/app.scss';
 
 import Header from '../components/Header';
@@ -33,7 +36,9 @@ export class Layout extends React.Component {
           <title>{config.siteTitle}</title>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href={favicon} />
+          <link rel="icon" type="image/png" sizes="32x32" href={favicon32x32} />
+          <link rel="icon" type="image/png" sizes="16x16" href={favicon16x16} />
+          <link rel="shortcut icon" href={favicon} />
           <meta name="description" content={config.siteDescription} />
           <meta property="og:title" content={config.siteTitle} />
           <meta property="og:url" content={config.siteUrl} />
