@@ -10,9 +10,9 @@ $space-pagePaddingBottom: 40px;
 
 // Colors
 
-$color-siteBorders: #eee;
-$color-siteInnerBorders: #efefef;
-$color-sidebarLinkBorder: rgba(0, 0, 0, 0.1);
+$color-siteBorders: #bbbbbb;
+$color-siteInnerBorders: $color-siteBorders;
+$color-sidebarLinkBorder: $color-siteInnerBorders;
 $color-sidebarLinkActive: rgb(243, 189, 13);
 $color-date: rgba(0, 0, 0, 0.4);
 $color-blogPostBorder: #efefef;
