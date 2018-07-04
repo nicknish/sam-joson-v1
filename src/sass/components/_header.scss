@@ -9,9 +9,12 @@
 
 .siteHeader-logoLink {
   display: block;
-  max-width: 220px;
+  max-width: 200px;
   margin: 0 auto;
   line-height: 1;
+  @media screen and (min-width: 768px) {
+    max-width: 220px;
+  }
 }
 
 .siteHeader-logo {
