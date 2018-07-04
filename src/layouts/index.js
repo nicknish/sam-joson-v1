@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import Modal from 'react-modal';
 import config from '../utils/siteConfig';
 import favicon from '../images/favicon.ico';
 import favicon16x16 from '../images/favicon-16x16.png';
@@ -9,6 +10,8 @@ import '../sass/app.scss';
 
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
+
+Modal.setAppElement('#___gatsby');
 
 export class Layout extends React.Component {
   state = {

@@ -1,27 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import 'whatwg-fetch';
 import Button from './Button';
-
-const Modal = styled.div`
-  background: white;
-  padding: 2em;
-  border-radius: 2px;
-  position: fixed;
-  min-width: 75%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0 auto;
-  z-index: 99;
-  display: flex;
-  flex-flow: column;
-  align-items: flex-start;
-  transition: 0.2s all;
-  opacity: ${props => (props.visible ? '1' : '0')};
-  visibility: ${props => (props.visible ? 'visible' : 'hidden')};
-`;
+import Modal from './Modal';
 
 const encode = data => {
   return Object.keys(data)
@@ -30,20 +11,17 @@ const encode = data => {
 };
 
 class ContactForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      email: '',
-      message: '',
-      showModal: false
-    };
-  }
+  state = {
+    name: '',
+    email: '',
+    message: '',
+    showModal: false
+  };
 
   handleInputChange = event => {
     const target = event.target;
-    const value = target.value;
-    const name = target.name;
+    const { value, name } = target;
+
     this.setState({
       [name]: value
     });
@@ -57,6 +35,7 @@ class ContactForm extends React.Component {
     })
       .then(this.handleSuccess)
       .catch(error => alert(error));
+
     event.preventDefault();
   };
 
@@ -80,14 +59,13 @@ class ContactForm extends React.Component {
         onSubmit={this.handleSubmit}
         data-netlify="true"
         data-netlify-honeypot="bot"
-        overlay={this.state.showModal}
         onClick={this.closeModal}
       >
         <input type="hidden" name="form-name" value="contact" />
 
         <p hidden>
           <label>
-            Don’t fill this out:{' '}
+            Don't fill this out:{' '}
             <input name="bot" onChange={this.handleInputChange} />
           </label>
         </p>
@@ -101,6 +79,7 @@ class ContactForm extends React.Component {
           onChange={this.handleInputChange}
           required
         />
+
         <input
           name="email"
           type="email"
@@ -123,7 +102,11 @@ class ContactForm extends React.Component {
 
         <Button className="btn btn-primary btn-sm m-t-10">Send</Button>
 
-        <Modal visible={this.state.showModal}>
+        <Modal
+          isOpen={this.state.showModal}
+          onRequestClose={this.closeModal}
+          contentLabel="Successfully sent message modal"
+        >
           <p>
             Thank you for reaching out. I will get back to you as soon as
             possible.
