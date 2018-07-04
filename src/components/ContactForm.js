@@ -107,10 +107,7 @@ class ContactForm extends React.Component {
           onRequestClose={this.closeModal}
           contentLabel="Successfully sent message modal"
         >
-          <p>
-            Thank you for reaching out. I will get back to you as soon as
-            possible.
-          </p>
+          <p>Thanks for the message!</p>
           <Button onClick={this.closeModal}>Okay</Button>
         </Modal>
       </form>
