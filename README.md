@@ -28,7 +28,7 @@ Netlify will automatically deploy when new code is pushed to `master`.
 
 Navigate to Netlify: **Forms** → **Notifications**
 
-## Useful Tips
+## Useful Tips from Gatsby Starter GCN
 
 - If you make edits to your Contentful space while running `gatsby develop` you will need to stop it and rerun the command to see the changes reflected. For example a new post or page will not automatically show up until the website has been rebuilt.
 - The template assumes you have at least **one page**, **one post** and **one tag** in Contentful. If you do not the website will fail to build.
