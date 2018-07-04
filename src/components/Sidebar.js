@@ -1,8 +1,10 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Paw from './svg/Paw';
 
 const SidebarLink = props => (
   <Link className="sidebar-link" activeClassName="is-active" {...props}>
+    <Paw className="sidebar-linkPaw" />
     {props.children}
   </Link>
 );
