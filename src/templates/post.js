@@ -7,6 +7,7 @@ import TagList from '../components/TagList';
 import PostLinks from '../components/PostLinks';
 import PostDate from '../components/PostDate';
 import SEO from '../components/SEO';
+import PostSignature from '../images/post_signature.png';
 
 const PostTemplate = ({ data }) => {
   const { title, slug, id, body, publishDate, tags } = data.contentfulPost;
@@ -29,6 +30,13 @@ const PostTemplate = ({ data }) => {
         {tags && <TagList tags={tags} />}
         <PostDate date={publishDate} />
         <PageBody body={body} />
+
+        <div className="clearfix">
+          <div className="post-signatureContainer">
+            <img src={PostSignature} className="post-signature" />
+          </div>
+        </div>
+
         <PostLinks previous={postIndex.previous} next={postIndex.next} />
       </div>
     </div>
