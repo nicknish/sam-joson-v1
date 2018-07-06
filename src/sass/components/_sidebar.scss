@@ -15,24 +15,20 @@
     left: 0;
   }
 
-  ul {
-    margin: 0;
-    list-style: none;
-  }
-
-  ul > li {
-    margin: 0;
-
-    &:last-child > a {
-      border-bottom: 0;
-    }
-  }
-
   @media (min-width: 768px) {
     position: static;
     max-width: 200px;
     box-shadow: none;
   }
+}
+
+.sidebar-nav {
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-navItem {
+  margin: 0;
 }
 
 .sidebar-link {
@@ -45,7 +41,6 @@
   font-family: $font-header;
   letter-spacing: 3px;
   text-decoration: none;
-  // background-image: url('../../images/paw.png');
 
   &:hover,
   &.is-active {
@@ -91,4 +86,34 @@
   @media (min-width: 768px) {
     display: none;
   }
+}
+
+.social {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  font-size: 30px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+.social-item {
+  margin: 0 4px;
+}
+
+.social-icon {
+  color: rgba(0, 0, 0, 0.7);
+  &:hover {
+    color: $color-sidebarLinkActive;
+  }
+}
+
+.social-icon--linkedin {
+  position: relative;
+  top: -2px;
 }
