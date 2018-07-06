@@ -30,7 +30,7 @@ export class Layout extends React.Component {
   };
 
   render() {
-    const { children } = this.props;
+    const { children, data } = this.props;
     const { menuOpen } = this.state;
 
     return (
@@ -53,7 +53,11 @@ export class Layout extends React.Component {
         <Header handleToggleMenu={this.handleToggleMenu} />
 
         <div className="siteContainer">
-          <Sidebar menuOpen={menuOpen} handleCloseMenu={this.handleCloseMenu} />
+          <Sidebar
+            menuOpen={menuOpen}
+            handleCloseMenu={this.handleCloseMenu}
+            resume={data.resume}
+          />
           <main className="siteContent">{children()}</main>
         </div>
 
@@ -64,5 +68,19 @@ export class Layout extends React.Component {
     );
   }
 }
+
+export const query = graphql`
+  query layoutQuery {
+    resume: contentfulResume {
+      file {
+        file {
+          url
+          fileName
+          contentType
+        }
+      }
+    }
+  }
+`;
 
 export default Layout;
