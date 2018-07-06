@@ -10,7 +10,9 @@ export const Portfolio = ({ data }) => (
     </Helmet>
 
     <div className="page container">
-      <h1 className="page-title">Portfolio</h1>
+      <header className="page-header">
+        <h1 className="page-title">Portfolio</h1>
+      </header>
 
       {data.portfolio.edges[0].node.portfolioItems.map(item => (
         <PortfolioItem

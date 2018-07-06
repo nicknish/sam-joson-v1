@@ -1,8 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import config from '../utils/siteConfig';
-import PageTitle from '../components/PageTitle';
 import PageBody from '../components/PageBody';
+import PostDate from '../components/PostDate';
 
 export const PortfolioItem = ({ data }) => {
   const { title, body, date } = data.portfolioItem;
@@ -14,8 +14,11 @@ export const PortfolioItem = ({ data }) => {
       </Helmet>
 
       <div className="container">
-        <PageTitle>{title}</PageTitle>
-        <span>{date}</span>
+        <header className="page-header">
+          <h1 className="page-title page-title--post">{title}</h1>
+          <PostDate date={date} />
+        </header>
+
         <PageBody body={body} />
       </div>
     </div>

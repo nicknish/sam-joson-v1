@@ -26,9 +26,12 @@ const PostTemplate = ({ data }) => {
       <SEO pagePath={`/blog/${slug}`} postNode={postNode} postSEO />
 
       <div className="post container">
-        <h1>{title}</h1>
+        <header className="page-header">
+          <h1 className="page-title page-title--post">{title}</h1>
+          <PostDate date={publishDate} />
+        </header>
+
         {tags && <TagList tags={tags} />}
-        <PostDate date={publishDate} />
         <PageBody body={body} />
 
         <div className="clearfix">
