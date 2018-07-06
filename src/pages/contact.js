@@ -20,9 +20,8 @@ const Contact = ({ data }) => {
         <PageTitle>Contact</PageTitle>
         <p>
           Contact me through here or email me at{' '}
-          <a href="mailto:samanthajoson856@gmail.com">
-            samanthajoson856@gmail.com
-          </a>. I'll try to get back to you within 24 hours.
+          <a href={`mailto:${config.socialEmail}`}>{config.socialEmail}</a>.
+          I'll try to get back to you within 24 hours.
         </p>
         <ContactForm />
       </div>
