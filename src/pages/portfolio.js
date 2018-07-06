@@ -19,7 +19,7 @@ export const Portfolio = ({ data }) => (
           to={`/portfolio/${item.slug}`}
           title={item.title}
           date={item.date}
-          excerpt={item.body.childMarkdownRemark.excerpt}
+          excerptDescription={item.excerptDescription}
         />
       ))}
     </div>
@@ -35,10 +35,9 @@ export const query = graphql`
             slug
             title
             date
-            body {
+            excerptDescription {
               childMarkdownRemark {
                 html
-                excerpt(pruneLength: 200)
               }
             }
           }
