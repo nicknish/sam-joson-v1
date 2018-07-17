@@ -9,6 +9,7 @@ const Index = ({ data }) => {
       <div className="container page">
         {data.posts.edges.map(({ node: post }) => (
           <BlogPostPreview
+            key={post.id}
             to={`blog/${post.slug}`}
             title={post.title}
             publishDate={post.publishDate}
@@ -28,6 +29,7 @@ export const query = graphql`
     ) {
       edges {
         node {
+          id
           title
           slug
           publishDate(formatString: "MMMM DD, YYYY")
