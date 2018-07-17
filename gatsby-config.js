@@ -1,3 +1,4 @@
+const autoprefixer = require('autoprefixer');
 const config = require('./src/utils/siteConfig');
 let contentfulConfig;
 
@@ -166,7 +167,16 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`
       }
     },
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-postcss-sass`,
+      options: {
+        postCssPlugins: [
+          autoprefixer({
+            browsers: ['last 2 versions']
+          })
+        ]
+      }
+    },
     'gatsby-plugin-netlify'
   ]
 };
