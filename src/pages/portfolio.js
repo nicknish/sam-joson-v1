@@ -16,6 +16,7 @@ export const Portfolio = ({ data }) => (
 
       {data.portfolio.edges[0].node.portfolioItems.map(item => (
         <PortfolioItem
+          key={item.id}
           to={`/portfolio/${item.slug}`}
           title={item.title}
           date={item.date}
@@ -32,6 +33,7 @@ export const query = graphql`
       edges {
         node {
           portfolioItems {
+            id
             slug
             title
             date
